@@ -1,16 +1,16 @@
 package com.loop.utilities;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import io.cucumber.java.Scenario;
+import org.junit.Assert;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
-
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class BrowsersUtility {
 
@@ -79,6 +79,16 @@ public class BrowsersUtility {
     public static void hoverOverElement(WebElement element){
         Actions action = new Actions(Driver.driver());
         action.moveToElement(element).perform();
+    }
+
+    /**
+     * Clicks on an element using JavaScript
+     * @param element
+     * @author nsh
+     */
+    public static void clickWithJS(WebElement element) {
+        ((JavascriptExecutor) Driver.driver()).executeScript("arguments[0].scrollIntoView(true);", element);
+        ((JavascriptExecutor) Driver.driver()).executeScript("arguments[0].click();", element);
     }
 
     /**
@@ -175,7 +185,80 @@ public class BrowsersUtility {
     }
 
 
+    public static void screenshot(Scenario scenario) {
+        if (!scenario.isFailed()) {
+            final byte[] screenshot = ((TakesScreenshot) Driver.driver()).getScreenshotAs(OutputType.BYTES);
+            scenario.attach(screenshot, "image/png", scenario.getName());
+            Driver.closeDriver();
+        }
 
 
+    }
 
-}
+    public static void takeScreenshot(){
+        try {
+            myScenario.log("Current url is: " + Driver.driver().getCurrentUrl());
+            final byte[] screenshot = ((TakesScreenshot)Driver.driver()).getScreenshotAs(OutputType.BYTES);
+            myScenario.attach(screenshot, "image/png", myScenario.getName());
+        } catch (WebDriverException wbd){
+            wbd.getMessage();
+        } catch (ClassCastException cce){
+            cce.getMessage();
+        }
+    }
+    public static Scenario myScenario;
+
+    /**
+     * @Param element
+     * @Param value
+     * @Author darsmarsco
+     */
+
+        public static void clearAndSendKeysInt(WebElement element, int value) {
+            // Clear the existing value by selecting all and deleting
+            //element.sendKeys(Keys.CONTROL + "a");
+            element.sendKeys(Keys.DELETE);
+
+            // Convert the integer to a string and send it
+            element.sendKeys(String.valueOf(value));
+        }
+
+    /**
+     *
+     * @param elementList
+     * @return List<String>
+     * @autor Yuliia
+     */
+    public static List<String> getElementsText(List<WebElement> elements){
+
+            List<String> list = new ArrayList<>();
+            for (WebElement element : elements) {
+                list.add(element.getText());
+            }
+            return list;
+        }
+
+    /**
+     *
+     * @param elements
+     * @return
+     */
+    public static List<String> getElementsWithStream(List<WebElement> elements){
+        return  elements.stream()
+                .map(x -> x.getText())
+                .collect(Collectors.toList());
+        }
+
+    /**
+     *
+     * @param elements
+     * @return
+     */
+    public static List<String> getElementsWithStream2(List<WebElement> elements){
+        return  elements.stream()
+                .map(WebElement::getText)
+                .collect(Collectors.toList());
+    }
+
+
+    }
