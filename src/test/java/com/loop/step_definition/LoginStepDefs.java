@@ -7,7 +7,7 @@ import com.loop.utilities.ConfigurationReader;
 import com.loop.utilities.DocuportConstants;
 import com.loop.utilities.Driver;
 import io.cucumber.java.en.*;
-import org.testng.Assert;
+import org.junit.Assert;
 
 import java.io.IOException;
 import java.util.Map;
