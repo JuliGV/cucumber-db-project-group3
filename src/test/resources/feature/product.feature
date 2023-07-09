@@ -21,7 +21,7 @@ Feature: product data table practice
     Then User should be able to see expected prices in following products with listOflist
       | Phones   | Samsung galaxy s6 | 360 |
       | Phones   | Nokia lumia 1520  | 820 |
-      | Phones   | Nexus 6           | 650 |
+      | Phones   | Nexus 6           | 650|
       | Laptops  | Sony vaio i5      | 790 |
       | Laptops  | Sony vaio i7      | 790 |
       | Laptops  | MacBook air       | 700 |

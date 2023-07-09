@@ -6,6 +6,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,13 +19,13 @@ public class BrowsersUtility {
      *
      */
 
-    public static void switchWindowAndValidate(WebDriver driver, String expectedTitle,String expectedUrl){
+    public static void switchWindowAndValidate(WebDriver driver, String expectedTitle, String expectedUrl) {
         expectedUrl = expectedUrl.toLowerCase();
-         expectedTitle = expectedTitle.toLowerCase();
+        expectedTitle = expectedTitle.toLowerCase();
         Set<String> windowsHandles = driver.getWindowHandles();
         for (String each : windowsHandles) {
             driver.switchTo().window(each);
-            if(driver.getCurrentUrl().toLowerCase().contains(expectedUrl)){
+            if (driver.getCurrentUrl().toLowerCase().contains(expectedUrl)) {
                 break;
             }
 
@@ -32,32 +33,32 @@ public class BrowsersUtility {
         Assert.assertTrue(driver.getTitle().toLowerCase().contains(expectedTitle));
     }
 
-    public static void switchToWindow(WebDriver driver,String expectedTitle){
+    public static void switchToWindow(WebDriver driver, String expectedTitle) {
         String origin = driver.getWindowHandle();
-        for (String handel : driver.getWindowHandles()){
+        for (String handel : driver.getWindowHandles()) {
             driver.switchTo().window(handel);
-            if(driver.getTitle().contains(expectedTitle)){
+            if (driver.getTitle().contains(expectedTitle)) {
                 return;
             }
         }
         driver.switchTo().window(origin);
     }
 
-    public static void validateTitle(WebDriver driver,String expectedTitle){
+    public static void validateTitle(WebDriver driver, String expectedTitle) {
         Assert.assertTrue(driver.getTitle().contains(expectedTitle));
     }
 
     /**
-     *
-
-     @param nameOfthePage from loop practice page
-     once you on the page call it
-     @nsh*/
-    public static void loopLinkClick(String nameOfthePage){
+     * @param nameOfthePage from loop practice page
+     *                      once you on the page call it
+     * @nsh
+     */
+    public static void loopLinkClick(String nameOfthePage) {
         WebElement element = Driver.driver().findElement(By.xpath("//a[.='" + nameOfthePage + "']"));
         WebDriverWait wait = new WebDriverWait(Driver.driver(), Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(element));
-        element.click();}
+        element.click();
+    }
 
 //    LoopPracticeDynamicLoading page;
 //
@@ -74,15 +75,17 @@ public class BrowsersUtility {
 
     /**
      * method hover over
+     *
      * @param element
      */
-    public static void hoverOverElement(WebElement element){
+    public static void hoverOverElement(WebElement element) {
         Actions action = new Actions(Driver.driver());
         action.moveToElement(element).perform();
     }
 
     /**
      * Clicks on an element using JavaScript
+     *
      * @param element
      * @author nsh
      */
@@ -93,73 +96,79 @@ public class BrowsersUtility {
 
     /**
      * scroll to element
+     *
      * @param element
      */
-    public static void scrollToElement(WebElement element){
-        ((JavascriptExecutor) Driver.driver()).executeScript("arguments[0].scrollIntoView(true);",element);
+    public static void scrollToElement(WebElement element) {
+        ((JavascriptExecutor) Driver.driver()).executeScript("arguments[0].scrollIntoView(true);", element);
     }
 
     /**
      * scroll and click with JSExecutor
+     *
      * @param element
      */
-    public static void scrollAndClick(WebElement element){
-        ((JavascriptExecutor) Driver.driver()).executeScript("arguments[0].scrollIntoView(true);",element);
-        ((JavascriptExecutor) Driver.driver()).executeScript("arguments[0].click;",element);
+    public static void scrollAndClick(WebElement element) {
+        ((JavascriptExecutor) Driver.driver()).executeScript("arguments[0].scrollIntoView(true);", element);
+        ((JavascriptExecutor) Driver.driver()).executeScript("arguments[0].click;", element);
     }
 
     /**
      * this method will double click  any given element
+     *
      * @param element
      */
-    public static void doubleClick(WebElement element){
-       new Actions(Driver.driver()).doubleClick().perform();
+    public static void doubleClick(WebElement element) {
+        new Actions(Driver.driver()).doubleClick().perform();
     }
 
     /**
      * waits for providing element to be visible
+     *
      * @param element
      * @param timeToWaitSec
      * @return element
      * @author Yuliia
      */
-    public static WebElement waitForVisibility(WebElement element,int timeToWaitSec){
-        WebDriverWait wait = new WebDriverWait(Driver.driver(),Duration.ofSeconds(timeToWaitSec));
+    public static WebElement waitForVisibility(WebElement element, int timeToWaitSec) {
+        WebDriverWait wait = new WebDriverWait(Driver.driver(), Duration.ofSeconds(timeToWaitSec));
         return wait.until(ExpectedConditions.visibilityOf(element));
     }
 
     /**
      * waits for providing element to be not visible
+     *
      * @param element
      * @param timeToWait
-     *
      * @author Yuliia
      */
-    public static void waitForInvisibility(WebElement element,int timeToWait){
-        WebDriverWait wait = new WebDriverWait(Driver.driver(),Duration.ofSeconds(timeToWait));
-         wait.until(ExpectedConditions.invisibilityOf(element));
+    public static void waitForInvisibility(WebElement element, int timeToWait) {
+        WebDriverWait wait = new WebDriverWait(Driver.driver(), Duration.ofSeconds(timeToWait));
+        wait.until(ExpectedConditions.invisibilityOf(element));
     }
 
     /**
      * wait untill the element become clickable
+     *
      * @param element
      * @param timeOut
      * @return
      * @author Yuliia
      */
-    public static WebElement waitForClickable(WebElement element,int timeOut){
-        WebDriverWait wait = new WebDriverWait(Driver.driver(),Duration.ofSeconds(timeOut));
+    public static WebElement waitForClickable(WebElement element, int timeOut) {
+        WebDriverWait wait = new WebDriverWait(Driver.driver(), Duration.ofSeconds(timeOut));
         return wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
     /**
      * perform pause
+     *
      * @param seconds
      */
-    public static void justWait(int seconds){
-        try{
-            Thread.sleep(seconds*1000);
-        }catch (InterruptedException e){
+    public static void justWait(int seconds) {
+        try {
+            Thread.sleep(seconds * 1000);
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
@@ -180,8 +189,8 @@ public class BrowsersUtility {
         }
     }
 
-    public static void dragAndDrop(WebElement dragElement,WebElement dropToElement){
-         new Actions(Driver.driver()).dragAndDrop(dragElement,dropToElement).perform();
+    public static void dragAndDrop(WebElement dragElement, WebElement dropToElement) {
+        new Actions(Driver.driver()).dragAndDrop(dragElement, dropToElement).perform();
     }
 
 
@@ -195,17 +204,18 @@ public class BrowsersUtility {
 
     }
 
-    public static void takeScreenshot(){
+    public static void takeScreenshot() {
         try {
             myScenario.log("Current url is: " + Driver.driver().getCurrentUrl());
-            final byte[] screenshot = ((TakesScreenshot)Driver.driver()).getScreenshotAs(OutputType.BYTES);
+            final byte[] screenshot = ((TakesScreenshot) Driver.driver()).getScreenshotAs(OutputType.BYTES);
             myScenario.attach(screenshot, "image/png", myScenario.getName());
-        } catch (WebDriverException wbd){
+        } catch (WebDriverException wbd) {
             wbd.getMessage();
-        } catch (ClassCastException cce){
+        } catch (ClassCastException cce) {
             cce.getMessage();
         }
     }
+
     public static Scenario myScenario;
 
     /**
@@ -214,51 +224,48 @@ public class BrowsersUtility {
      * @Author darsmarsco
      */
 
-        public static void clearAndSendKeysInt(WebElement element, int value) {
-            // Clear the existing value by selecting all and deleting
-            //element.sendKeys(Keys.CONTROL + "a");
-            element.sendKeys(Keys.DELETE);
+    public static void clearAndSendKeysInt(WebElement element, int value) {
+        // Clear the existing value by selecting all and deleting
+        //element.sendKeys(Keys.CONTROL + "a");
+        element.sendKeys(Keys.DELETE);
 
-            // Convert the integer to a string and send it
-            element.sendKeys(String.valueOf(value));
-        }
+        // Convert the integer to a string and send it
+        element.sendKeys(String.valueOf(value));
+    }
 
     /**
-     *
      * @param elementList
      * @return List<String>
      * @autor Yuliia
      */
-    public static List<String> getElementsText(List<WebElement> elements){
+    public static List<String> getElementsText(List<WebElement> elements) {
 
-            List<String> list = new ArrayList<>();
-            for (WebElement element : elements) {
-                list.add(element.getText());
-            }
-            return list;
+        List<String> list = new ArrayList<>();
+        for (WebElement element : elements) {
+            list.add(element.getText());
         }
+        return list;
+    }
 
     /**
-     *
      * @param elements
      * @return
      */
-    public static List<String> getElementsWithStream(List<WebElement> elements){
-        return  elements.stream()
+    public static List<String> getElementsWithStream(List<WebElement> elements) {
+        return elements.stream()
                 .map(x -> x.getText())
                 .collect(Collectors.toList());
-        }
+    }
 
     /**
-     *
      * @param elements
      * @return
      */
-    public static List<String> getElementsWithStream2(List<WebElement> elements){
-        return  elements.stream()
+    public static List<String> getElementsWithStream2(List<WebElement> elements) {
+        return elements.stream()
                 .map(WebElement::getText)
                 .collect(Collectors.toList());
     }
 
 
-    }
+}
