@@ -7,10 +7,15 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        plugin = {"html:target/html-reports/cucumber-reports.html", // (generate) give us a report, that we can open in browser
-        "json:target/json-report/json-report"},// uplod reports in Xray(json )
+         // (generate) give us a report, that we can open in browser
+               // upload reports in Xray(json )
+
+        plugin = {"html:target/html-reports/cucumber-reports.html",
+                "json:target/json-reports/json-report",
+                "rerun:target/rerun.txt",
+                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
         features = "src/test/resources/feature",// point to location of feature class
-        glue = "com/loop/step_definition", // point to location of step defenition file
+        glue = "com/loop/step_definition", // point to location of step definition file
         dryRun = false,// care only snippet has implementation, give us snippets
         tags = "@wip", // run 2 of them (run scenario that have smoke or regression
         monochrome = true // reduce unnecessary tags, make your scenario more readable

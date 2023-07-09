@@ -2,7 +2,7 @@ Feature: Validate left menu for all roles
 
   Background:
     Given User is on Docuport login page
-  @wip
+
   Scenario Outline: Validate left menu for all roles
     When user enters credentials "<username>" and "<password>" for each role
     When user clicks login button
