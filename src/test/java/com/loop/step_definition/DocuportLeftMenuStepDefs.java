@@ -21,7 +21,6 @@ public class DocuportLeftMenuStepDefs extends BasePage {
         this.username = username;
         loginPage.usernameBox.sendKeys(username);
         loginPage.passwordBox.sendKeys(password);
-
     }
 
     @Then("validate all text for left menu links")
