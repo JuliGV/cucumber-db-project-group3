@@ -5,7 +5,7 @@ Feature: Validate left menu for all roles
 
   Scenario Outline: Validate left menu for all roles
     When user enters credentials "<username>" and "<password>" for each role
-    When user clicks login button
+    When user clicks on "Log in" button
     And user should see home page
     Then validate all text for left menu links
 
