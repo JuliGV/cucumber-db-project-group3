@@ -15,21 +15,21 @@ Feature: Docuport Login Logout Feature
   Scenario: Login as a employee
     When  user enters user for employee
     And user enters password for employee
-    And user clicks login button
+    And user clicks on "Log in" button
     Then user should see home page for employee
 
   @smoke
   Scenario: Login as a advisor
     When  user enters user for advisor
     And user enters password for advisor
-    And user clicks login button
+    And user clicks on "Log in" button
     Then user should see home page for advisor
 
   @smoke
   Scenario: Login as a admin
     When  user enters user for admin
     And user enters password for admin
-    And user clicks login button
+    And user clicks on "Log in" button
     Then user should see home page for admin
 
 

@@ -23,6 +23,10 @@ public class GoogleSearchStepDefs {
     public void user_is_google_search_page() {
         Driver.driver().get(ConfigurationReader.getProperty("googleURL"));
 
+        //Driver.driver().get(System.getenv("url"));
+
+
+
     }
     @When("user types Loop Academy in the google search box and clocks enter")
     public void user_types_loop_academy_in_the_google_search_box_and_clocks_enter() {

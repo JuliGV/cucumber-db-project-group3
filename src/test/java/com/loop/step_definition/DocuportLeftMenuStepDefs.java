@@ -4,8 +4,7 @@ import com.loop.pages.docuport.BasePage;
 import com.loop.pages.docuport.LoginPage;
 import com.loop.utilities.BrowsersUtility;
 import com.loop.utilities.Driver;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+import io.cucumber.java.en.*;
 import org.junit.Assert;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
