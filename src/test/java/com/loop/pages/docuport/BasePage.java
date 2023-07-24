@@ -126,4 +126,18 @@ public class BasePage {
     }
 
 
+
+    @FindBy(xpath = "//input[@aria-label='Rows per page:']/preceding-sibling::div")
+    public WebElement numberOfRowsByDefaul;
+
+    @FindBy(xpath = "//div[@class='v-input__append-inner']")
+    public WebElement rowPerPageDrop;
+
+    public void chooseNumOfPage(Integer numberOfPage){
+        rowPerPageDrop.click();
+        WebElement numOfRows = Driver.driver().findElement(By.xpath("//div[@class='v-list-item__content' and div[.='"+numberOfPage+"']]"));
+        numOfRows.click();
+    }
+
+
 }
