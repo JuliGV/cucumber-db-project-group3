@@ -39,9 +39,4 @@ See also the list of contributors who participated in this project.
 License
 This project is licensed under the MIT License - see the LICENSE.md file for details
 
-Please replace placeholders (like <repository-url>, <project-name>, [Your Name], YourGithubUsername, https://github.com/your/project/contributors) with actual information.
-
-This is a very basic README template. Depending on your project, you might need to add or remove sections. For instance, you might want to add sections for Code Style, Technologies used, Acknowledgments, etc.
-
-Remember, the goal of the README is to provide all the necessary information for anyone (new team member, open-source contributor, etc.) to understand what your project is about, how to set it up, and how to use it.
 
