@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.loopcamp</groupId>
-    <artifactId>cucumber-project-b1</artifactId>
+    <artifactId>cucumber-db-project-group3</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
