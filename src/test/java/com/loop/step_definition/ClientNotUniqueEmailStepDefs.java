@@ -37,21 +37,6 @@ public class ClientNotUniqueEmailStepDefs extends BasePage {
         clientsPage.servicesDrop.click();
         clientsPage.servicesTax.click();
         BrowsersUtility.waitForClickable(clientsPage.saveBtn,15).click();
-
-        //clientsPage.clickOnEditBtn("Test Test");
-
-//        clientsPage.emailOfClient.sendKeys(Keys.CONTROL + "a");
-//        clientsPage.emailOfClient.sendKeys(Keys.DELETE);
-
-
-//        JavascriptExecutor executor = (JavascriptExecutor) Driver.driver();
-//        executor.executeScript("arguments[0].value = '';", clientsPage.emailOfClient);
-
-//        clientsPage.emailOfClient.clear();
-
-
-
-
     }
 
     @When("user creates one more client with the same  email test@gmail.com")
@@ -69,14 +54,13 @@ public class ClientNotUniqueEmailStepDefs extends BasePage {
         clientsPage.servicesDrop.click();
         clientsPage.servicesTax.click();
         BrowsersUtility.waitForClickable(clientsPage.saveBtn,10).click();
-
-
     }
 
-    @Then("validate if both clints have the same email {string}")
-    public void validate_if_both_clints_have_the_same_email(String email) {
+    @Then("validate if both clients have the same email {string}")
+    public void validate_if_both_clients_have_the_same_email(String email) {
         Assert.assertEquals(clientsPage.returnValueOfRowTable("ATest11 Test11","email"),email);
         Assert.assertEquals(clientsPage.returnValueOfRowTable("ATest22 Test22","email"),email);
     }
+
 
 }
