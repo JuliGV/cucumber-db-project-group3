@@ -65,7 +65,7 @@ public class LoginStepDefs {
     public void user_should_see_home_page_for_employee() {
         BrowsersUtility.waitForClickable(homePage.userMenuBtn, 10);
         homePage.userMenuBtn.click();
-        BrowsersUtility.waitForVisibility(homePage.profileOption, 15);
+      BrowsersUtility.waitForVisibility(homePage.profileOption, 15);
         homePage.profileOption.click();
         Assert.assertEquals(homePage.emailAddressValue.getText(), "b1g3_employee@gmail.com");
     }
