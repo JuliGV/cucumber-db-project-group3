@@ -14,4 +14,4 @@ Feature: Validate rows per page in the leads menu for avisor
     When user clicks on "Users" button
     Then user validates that Rows Per Page shows by default 10
     When user change Rows Per Page to 5
-    Then user validates that Rows Per Page shows 5.
+    Then user validates that Rows Per Page shows 5
