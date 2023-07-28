@@ -60,6 +60,9 @@ public class BasePage {
     public WebElement continueBtn;
 
 
+   @FindBy(xpath = "//h1[.='1099 Form']")
+   public WebElement form1099;
+
     public String getTextMenuLinks(String link) {
         return Driver.driver().findElement(By.xpath("//span[.='" + link + "']")).getText();
     }
