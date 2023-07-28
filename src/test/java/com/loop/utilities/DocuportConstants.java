@@ -20,7 +20,7 @@ public class DocuportConstants {
     public static final String CLIENT_ROLE = "client";
     public static final String ADVISOR_ROLE = "advisor";
     public static final String EMPLOYEE_ROLE = "employee";
-    public static final String SUPERVOSIR_ROLE = "supervisor";
+    public static final String SUPERVISOR_ROLE = "supervisor";
 
 
 
