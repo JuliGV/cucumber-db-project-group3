@@ -1,6 +1,6 @@
 Feature: Validate rows per page in the leads menu for avisor
 
-@wip
+@smoke
   Scenario: Validate
     Given User is on Docuport login page
     When user enters credentions
