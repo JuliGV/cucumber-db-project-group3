@@ -10,6 +10,3 @@ Feature: As a data consumer,I want the department information store in postgers 
       | bookkeeping          |
       | payroll              |
       | consultancy-services |
-
-
-
