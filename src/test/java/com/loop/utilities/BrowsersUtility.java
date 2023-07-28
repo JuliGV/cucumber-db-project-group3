@@ -7,12 +7,15 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import java.sql.*;
+
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.*;
+
 import java.util.stream.Collectors;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -240,7 +243,7 @@ public class BrowsersUtility {
     }
 
     /**
-     * @param elementList
+     * @param elements
      * @return List<String>
      * @autor Yuliia
      */
