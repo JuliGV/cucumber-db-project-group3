@@ -3,7 +3,7 @@ Feature: Docuport Login Logout Feature
   Background: will run for before each scenarios
     Given User is on Docuport login page
 
-  @smoke
+
   Scenario:  Login as a Client
     When  user enters user for client
     And user enters password for client
@@ -11,14 +11,14 @@ Feature: Docuport Login Logout Feature
     Then user should see home page for client
 
 
-  @smoke
+
   Scenario: Login as a employee
     When  user enters user for employee
     And user enters password for employee
     And user clicks on "Log in" button
     Then user should see home page for employee
 
-  @smoke
+
   Scenario: Login as a advisor
     When  user enters user for advisor
     And user enters password for advisor
@@ -39,7 +39,7 @@ Feature: Docuport Login Logout Feature
       | password | Group3                |
     Then user should see home page for client
 
-@yg
+
   Scenario Outline: Login as a client Map practice
     When user enters credentials "<username>" and "<password>"
     Then user should see home page
