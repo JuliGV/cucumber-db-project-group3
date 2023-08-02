@@ -239,7 +239,7 @@ public class BrowsersUtility {
     }
 
     /**
-     * @param elementList
+     * @param elements
      * @return List<String>
      * @autor Yuliia
      */
