@@ -10,8 +10,9 @@ import org.junit.runner.RunWith;
          // (generate) give us a report, that we can open in browser
                // upload reports in Xray(json )
 
-        plugin = {"html:target/html-reports/cucumber-reports.html",
-                "json:target/json-reports/json-report",
+        plugin = {"json:target/cucumber.json",
+                "html:target/cucumber/report.html",
+                "junit:target/junit/junit-report.xml",
                 "rerun:target/rerun.txt",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
         features = "src/test/resources/feature",// point to location of feature class

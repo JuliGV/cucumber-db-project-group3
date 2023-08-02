@@ -15,10 +15,10 @@ public class HomePage {
     public static final String CHOOSEACCOUNT = "//h3[.='Choose account']";
 
 
-    @FindBy(xpath = "//span[.='Batch1 Group3']/../../..")
+    @FindBy(xpath = "//span[.='Batch1 Group3']")
     public WebElement userMenuBtn;
 
-    @FindBy (xpath = "//span[.='Profile']/..")
+    @FindBy (xpath = "//span[.='Profile']")
     public WebElement profileOption;
 
     @FindBy(xpath = "//div[.='Email address']//following-sibling::div/span")
