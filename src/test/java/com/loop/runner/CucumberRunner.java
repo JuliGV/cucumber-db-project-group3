@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
          // (generate) give us a report, that we can open in browser
                // upload reports in Xray(json )
 
-        plugin = {"json:target/cucumber.json",
+        plugin = {"json:target/json-reports",
                 "html:target/cucumber/report.html",
                 "junit:target/junit/junit-report.xml",
                 "rerun:target/rerun.txt",
