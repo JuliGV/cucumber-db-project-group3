@@ -3,7 +3,7 @@ Feature: Validate Received documents page for all roles
   Background:
     Given User is on Docuport login page
 
-
+  @smoke
   Scenario Outline: Validate Received documents page for client, employee and supervisor
     When user enters credentials "<username>" and "<password>"
     And user clicks on "Received docs" button

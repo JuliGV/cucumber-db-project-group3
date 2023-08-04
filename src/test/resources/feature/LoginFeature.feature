@@ -4,7 +4,7 @@ Feature: Docuport Login Logout Feature
     Given User is on Docuport login page
 
 
-  Scenario:  Login as a Client
+  Scenario:   Login as a Client
     When  user enters user for client
     And user enters password for client
     And user clicks login button
