@@ -30,7 +30,7 @@ public class HomePage {
     @FindBy(xpath = "//input[@type='text']/..")
     public WebElement accountDropdown;
 
-    @FindBy(xpath = CHOOSEACCOUNT)
+    @FindBy(xpath = "//h3[.='Choose account']")
     public WebElement dropdownTextIsDisplayed;
 
     /**
