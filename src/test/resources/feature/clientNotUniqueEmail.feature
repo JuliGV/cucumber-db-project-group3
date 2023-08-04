@@ -1,6 +1,7 @@
 Feature: Validate if each client users can have the same email
-@smoke
+
   Scenario Outline: Validate if clients can have the same email
+
     Given User is on Docuport login page
     When user enters credentials "<username>" and "<password>" for each role
     When user clicks on "Log in" button

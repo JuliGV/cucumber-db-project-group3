@@ -1,6 +1,6 @@
 Feature: sample feature to demo soft assertion
 
-@smoke
+
   Scenario: sample scenario for soft assertion
     Given User is on Docuport login page
     When user enters credentions

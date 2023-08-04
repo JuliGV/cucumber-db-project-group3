@@ -25,7 +25,7 @@ Feature: Docuport Login Logout Feature
     And user clicks on "Log in" button
     Then user should see home page for advisor
 
-  @smoke
+
   Scenario: Login as a admin
     When  user enters user for admin
     And user enters password for admin

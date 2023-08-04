@@ -5,6 +5,7 @@ Feature: Validate Received documents page for all roles
 
   @smoke
   Scenario Outline: Validate Received documents page for client, employee and supervisor
+
     When user enters credentials "<username>" and "<password>"
     And user clicks on "Received docs" button
     Then validate if  "Search" button is displayed on Receive docs page

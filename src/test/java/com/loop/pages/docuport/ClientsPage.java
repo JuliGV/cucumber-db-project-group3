@@ -31,7 +31,7 @@ public class ClientsPage {
     @FindBy(xpath = "(//span[.='Test Test']/..)[2]")
     public WebElement testTestUser;
 
-    @FindBy(xpath = "//span[contains(.,'Save')]/..")
+    @FindBy(xpath = "//span[contains(text(),'Save')]/..")
     public WebElement saveBtn;
 
     public void clickOnEditBtn(String clientFullName) {

@@ -1,6 +1,7 @@
 Feature: validate 1099 link
-  @smoke
+@smoke
   Scenario: Validate
+
     Given User is on Docuport login page
     When user enters credentions
       | username | b1g3_advisor@gmail.com |
