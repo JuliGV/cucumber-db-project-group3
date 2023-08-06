@@ -11,7 +11,7 @@ Feature: Docuport Login Logout Feature
     Then user should see home page for client
 
 
-
+  @smoke
   Scenario: Login as a employee
     When  user enters user for employee
     And user enters password for employee

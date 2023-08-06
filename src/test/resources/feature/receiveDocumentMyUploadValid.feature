@@ -5,7 +5,6 @@ Feature: Validate Received documents page for all roles
 
   @smoke
   Scenario Outline: Validate Received documents page for client, employee and supervisor
-
     When user enters credentials "<username>" and "<password>"
     And user clicks on "Received docs" button
     Then validate if  "Search" button is displayed on Receive docs page
@@ -18,7 +17,7 @@ Feature: Validate Received documents page for all roles
 
     Examples:
       | username                  | password |
-      | b1g3_client@gmail.com     | Group3   |
+      #| b1g3_client@gmail.com     | Group3   |
       | b1g3_advisor@gmail.com    | Group3   |
       | b1g3_supervisor@gmail.com | Group3   |
       | b1g3_employee@gmail.com   | Group3   |

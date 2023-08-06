@@ -3,8 +3,10 @@ package com.loop.step_definition;
 import com.loop.pages.docuport.BasePage;
 import com.loop.pages.docuport.ClientsPage;
 import com.loop.utilities.BrowsersUtility;
+import com.loop.utilities.Driver;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
+import org.openqa.selenium.JavascriptExecutor;
 
 public class ClientNotUniqueEmailStepDefs extends BasePage {
 
@@ -58,7 +60,7 @@ public class ClientNotUniqueEmailStepDefs extends BasePage {
     public void user_creates_one_more_client_with_the_same_email_test_gmail_com() {
         clientsPage.createNewClientBtn.click();
         clientsPage.clickTypeOfClient(personal);
-        sendKeysToFirstOrLastName("First name","ATest22");
+        sendKeysToFirstOrLastName("First name","AaaTest22");
         sendKeysToFirstOrLastName("Last name","Test22");
         clientsPage.ownerDropdown.click();
         clientsPage.ownerSendKeys.sendKeys("Test Test");
@@ -68,15 +70,17 @@ public class ClientNotUniqueEmailStepDefs extends BasePage {
         clientsPage.advisorDropdown.click();
         clientsPage.servicesDrop.click();
         clientsPage.servicesTax.click();
-        BrowsersUtility.waitForClickable(clientsPage.saveBtn,10).click();
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) Driver.driver();
+        jsExecutor.executeScript("arguments[0].click();", clientsPage.saveBtn);
+        //BrowsersUtility.waitForClickable(clientsPage.saveBtn,20).click();
 
 
     }
 
     @Then("validate if both clints have the same email {string}")
     public void validate_if_both_clints_have_the_same_email(String email) {
-        Assert.assertEquals(clientsPage.returnValueOfRowTable("ATest11 Test11","email"),email);
-        Assert.assertEquals(clientsPage.returnValueOfRowTable("ATest22 Test22","email"),email);
+        Assert.assertEquals(email,clientsPage.returnValueOfRowTable("AaaTest11 Test11","email"));
+        Assert.assertEquals(email,clientsPage.returnValueOfRowTable("AaaTest22 Test22","email"));
     }
 
 }

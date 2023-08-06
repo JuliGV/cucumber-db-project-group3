@@ -36,12 +36,12 @@ public class LoginStepDefs {
     @When("user clicks login button")
     public void user_clicks_login_button() {
 
-        loginPage.loginBtn.click();
+       BrowsersUtility.waitForClickable(loginPage.loginBtn,10).click(); ;
     }
 
     @Then("user should see home page for client")
     public void user_should_see_home_page_for_client() throws IOException {
-        Assert.assertTrue(homePage.homeIcone.isDisplayed());
+        Assert.assertTrue(BrowsersUtility.waitForVisibility(homePage.homeIcone,10).isDisplayed());
 //        //screenshot for specified element
 //        File file = homePage.homeIcone.getScreenshotAs(OutputType.FILE);
 //        File destFile = new File("homeIcone.png");
@@ -63,10 +63,8 @@ public class LoginStepDefs {
 
     @Then("user should see home page for employee")
     public void user_should_see_home_page_for_employee() {
-        BrowsersUtility.waitForClickable(homePage.userMenuBtn, 10);
-        homePage.userMenuBtn.click();
-      BrowsersUtility.waitForVisibility(homePage.profileOption, 15);
-        homePage.profileOption.click();
+        BrowsersUtility.waitForClickable(homePage.userMenuBtn, 10).click();
+      BrowsersUtility.waitForVisibility(homePage.profileOption, 20).click();
         Assert.assertEquals(homePage.emailAddressValue.getText(), "b1g3_employee@gmail.com");
     }
 
@@ -82,8 +80,7 @@ public class LoginStepDefs {
 
     @Then("user should see home page for advisor")
     public void user_should_see_home_page_for_advisor() throws InterruptedException {
-        BrowsersUtility.waitForClickable(homePage.userMenuBtn, 10);
-        homePage.userMenuBtn.click();
+        BrowsersUtility.waitForClickable(homePage.userMenuBtn, 10).click();
 //        BrowsersUtility.waitForVisibility(loginPage.profileOption,15);
         Thread.sleep(3000);
         homePage.profileOption.click();
@@ -103,10 +100,8 @@ public class LoginStepDefs {
 
     @Then("user should see home page for admin")
     public void user_should_see_home_page_for_admin() {
-        BrowsersUtility.waitForClickable(homePage.userMenuBtn, 10);
-        homePage.userMenuBtn.click();
-        BrowsersUtility.waitForVisibility(homePage.profileOption, 10);
-        homePage.profileOption.click();
+        BrowsersUtility.waitForClickable(homePage.userMenuBtn, 10).click();
+        BrowsersUtility.waitForVisibility(homePage.profileOption, 10).click();
         Assert.assertEquals(homePage.emailAddressValue.getText(), "b1g3_supervisor@gmail.com");
     }
 
@@ -125,7 +120,7 @@ public class LoginStepDefs {
     }
     @Then("user should see home page")
     public void user_should_see_home_page() {
-        Assert.assertTrue(homePage.homeIcone.isDisplayed());
+        Assert.assertTrue(BrowsersUtility.waitForVisibility(homePage.homeIcone,15).isDisplayed());
     }
 
 

@@ -2,7 +2,7 @@ Feature: As a data consumer,I want the department information store in postgers 
 
   Background:
     Given Establish database connection
-@db
+@smoke
   Scenario: Verify DB department's table column
     When Execute query to get all columns from "departments"
     Then verify the below column sare listed in result for
