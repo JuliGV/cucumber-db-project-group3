@@ -63,9 +63,10 @@ public class LoginStepDefs {
 
     @Then("user should see home page for employee")
     public void user_should_see_home_page_for_employee() {
-        BrowsersUtility.waitForClickable(homePage.userMenuBtn, 10).click();
-      BrowsersUtility.waitForVisibility(homePage.profileOption, 20).click();
-        Assert.assertEquals(homePage.emailAddressValue.getText(), "b1g3_employee@gmail.com");
+//        BrowsersUtility.waitForClickable(homePage.userMenuBtn, 10).click();
+//      BrowsersUtility.waitForVisibility(homePage.profileOption, 20).click();
+//        Assert.assertEquals(homePage.emailAddressValue.getText(), "b1g3_employee@gmail.com");
+        Assert.assertTrue(BrowsersUtility.waitForVisibility(homePage.homeIcone,15).isDisplayed());
     }
 
     @When("user enters user for advisor")

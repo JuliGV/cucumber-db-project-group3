@@ -1,5 +1,6 @@
 package com.loop.pages.docuport;
 
+import com.loop.utilities.BrowsersUtility;
 import com.loop.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -86,7 +87,8 @@ public class BasePage {
                 receivedDocsBtnLeftMenu.click();
                 break;
             case "My uploads":
-                myUploadsBtnLeftMenu.click();
+                BrowsersUtility.waitForClickable(myUploadsBtnLeftMenu,15);
+                jsExecutor.executeScript("arguments[0].click();", myUploadsBtnLeftMenu);
                 break;
             case "Clients":
                 clientsBtnLeftMenu.click();
@@ -122,7 +124,8 @@ public class BasePage {
                 userButton.click();
                 break;
             case "Log in":
-                loginBtn.click();
+                jsExecutor.executeScript("arguments[0].click();", usersBtnLeftMenu);
+                BrowsersUtility.waitForClickable(loginBtn,15);
                 break;
             case "Continue":
                 continueBtn.click();
