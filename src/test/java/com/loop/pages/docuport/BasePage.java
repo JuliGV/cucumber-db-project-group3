@@ -124,8 +124,8 @@ public class BasePage {
                 userButton.click();
                 break;
             case "Log in":
-                jsExecutor.executeScript("arguments[0].click();", usersBtnLeftMenu);
                 BrowsersUtility.waitForClickable(loginBtn,15);
+                jsExecutor.executeScript("arguments[0].click();", usersBtnLeftMenu);
                 break;
             case "Continue":
                 continueBtn.click();
