@@ -24,7 +24,7 @@ public class HomePage {
     @FindBy(xpath = "//div[.='Email address']//following-sibling::div/span")
     public WebElement emailAddressValue;
 
-    @FindBy (xpath = "//i[contains(@class,'mdi-home theme--light')]")
+    @FindBy (xpath = "//i[@class='v-icon notranslate mdi mdi-home theme--light']")
     public WebElement homeIcone;
 
     @FindBy(xpath = "//input[@type='text']/..")

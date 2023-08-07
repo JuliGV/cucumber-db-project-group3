@@ -1,6 +1,7 @@
 package com.loop.step_definition;
 
 import com.loop.pages.docuport.HomePage;
+import com.loop.utilities.BrowsersUtility;
 import io.cucumber.java.en.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -27,7 +28,7 @@ public class ClientChooseAccountStepDefs {
         homePage.accountDropdown.click();
         softAssertions.assertThat(homePage.continueBtn.isDisplayed()).isTrue();
         homePage.chooseAccountFromDropdpwn(account);
-        homePage.continueBtn.click();
+        BrowsersUtility.waitForClickable(homePage.continueBtn,15).click();
         softAssertions.assertAll();
     }
 }

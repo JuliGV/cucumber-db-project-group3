@@ -40,8 +40,8 @@ public class LoginStepDefs {
     }
 
     @Then("user should see home page for client")
-    public void user_should_see_home_page_for_client() throws IOException {
-        Assert.assertTrue(BrowsersUtility.waitForVisibility(homePage.homeIcone,10).isDisplayed());
+    public void user_should_see_home_page_for_client()  {
+        Assert.assertTrue(BrowsersUtility.waitForVisibility(homePage.homeIcone,15).isDisplayed());
 //        //screenshot for specified element
 //        File file = homePage.homeIcone.getScreenshotAs(OutputType.FILE);
 //        File destFile = new File("homeIcone.png");

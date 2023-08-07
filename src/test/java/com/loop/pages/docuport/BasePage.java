@@ -2,6 +2,7 @@ package com.loop.pages.docuport;
 
 import com.loop.utilities.Driver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -77,6 +78,9 @@ public class BasePage {
      * @param nameBtn
      */
     public void clickOnButton(String nameBtn) {
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) Driver.driver();
+
+
         switch (nameBtn) {
             case "Received docs":
                 receivedDocsBtnLeftMenu.click();
@@ -97,7 +101,7 @@ public class BasePage {
                 invitationsBtnLeftMenu.click();
                 break;
             case "Users":
-                usersBtnLeftMenu.click();
+                jsExecutor.executeScript("arguments[0].click();", usersBtnLeftMenu);
                 break;
             case "Leads":
                 leadsBtnLeftMenu.click();

@@ -9,4 +9,4 @@ Feature: sample feature to demo soft assertion
       | password | Group3                |
   And user validates if pop-up is visible
   And user chooses account from dropdown "test2"
-  Then user should see home page
+  Then user should see home page for client
